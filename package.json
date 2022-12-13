@@ -4,12 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:local": "cypress run",
+    "test:local-app": "cypress open",
+    "test:local-cypress-cloud": "cypress run --record --key d44d70f1-db10-4af1-8b59-bc5622042452",
+    "test:demo": "cypress run --config baseUrl=https://adminjs-demo.herokuapp.com",
+    "test:demo-cypress-cloud": "cypress run --config baseUrl=https://adminjs-demo.herokuapp.com --record --key d44d70f1-db10-4af1-8b59-bc5622042452"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.0.2"
+    "@types/node": "^16.10",
+    "cypress": "^12.0.2",
+    "ts-node": "^10.5.0",
+    "tsconfig-paths": "^3.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
   }
 }

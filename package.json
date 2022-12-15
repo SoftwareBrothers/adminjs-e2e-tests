@@ -8,6 +8,7 @@
     "test:local-app": "cypress open",
     "test:local-cypress-cloud": "cypress run --record --key d44d70f1-db10-4af1-8b59-bc5622042452",
     "test:demo": "cypress run --config baseUrl=https://adminjs-demo.herokuapp.com",
+    "test:demo-app": "cypress open --config baseUrl=https://adminjs-demo.herokuapp.com",
     "test:demo-cypress-cloud": "cypress run --config baseUrl=https://adminjs-demo.herokuapp.com --record --key d44d70f1-db10-4af1-8b59-bc5622042452"
   },
   "keywords": [],

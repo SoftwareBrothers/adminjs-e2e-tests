@@ -3,8 +3,15 @@ describe("AdminJS tests", () => {
     context('starting Admin in 1280x720p resolution', () => {
         beforeEach(() => {
             cy.viewport(1280, 720);
+            /*
+                The following line needed to exclude the exception from the console:
+                "This web push config can only be used on https://adminjs.co. Your current origin is https://adminjs-demo.herokuapp.com."
+                because of this exception, Admin JS panel demo tests fail by default in Cypress
+            */
             cy.once('uncaught:exception', () => false);
             cy.visit('/');
+            cy.get('input[name="email"]').clear().type('admin@example.com');
+            cy.get('input[name="password"]').clear().type('password');
             cy.contains('button', 'Log in').click();
             cy.get('.top-bar__NavBar-sc-vpnnkx-0').find('.adminjs_Icon').first().click();
             cy.get('section[width="sidebarWidth"] ul:first > li').each(($element) => {
